@@ -26,6 +26,10 @@ Tuning
 ---
 I manually tuned the  PID parameters for steer value _Kp_, _Kd_ and _Ki_ assuming a fixed throttle position of 0.3. The procedure I followed for tuning _Kp_, _Kd_ and _Ki_.
 
-1. Assume _Kd_ and _Ki_ are zero. Choose a value of _Kp_ which causes the car to remain on track for a reasonable length of time, say several seconds. This results in a plot of CTE as shown below with a value of _Kp_ = -0.3.
+1. Assume _Kd_ and _Ki_ are zero. Choose a value of _Kp_ which causes the car to remain on track for a reasonable length of time, say several timesteps. This results in a plot of CTE as shown below with a value of _Kp_ = -0.2. As the plot shows the car stays on the track for several timesteps, but the CTE oscillations increase without dampening until the car veers off track. This indicates that we need to tweak the _Kd_ parameter to reduce the magnitude of the oscillations.
 
 ![Vary_Kp_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.2_Kd_0.0_Ki_0.0.png)
+
+2. Keeping _Kp_ at -0.2, and _Ki_ at 0.0, I modified the _Kd_ parameter until the car stayed on track for the entire course. This results in a plot of CTE as shown below with a value of _Kd_ = -3.0.
+
+![Vary_Kd_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.2_Kd_-3.0_Ki_0.0.png)
