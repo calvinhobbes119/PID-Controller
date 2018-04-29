@@ -28,4 +28,4 @@ I manually tuned the  PID parameters for steer value _Kp_, _Kd_ and _Ki_ assumin
 
 1. Assume _Kd_ and _Ki_ are zero. Choose a value of _Kp_ which causes the car to remain on track for a reasonable length of time, say several seconds. This results in a plot of CTE as shown below with a value of _Kp_ = -0.3.
 
-![Vary_Kp_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.3_Kd_0.0_Ki_0.0.png)
+![Vary_Kp_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.2_Kd_0.0_Ki_0.0.png)
