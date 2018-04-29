@@ -43,4 +43,4 @@ After zooming into the above plot, I noticed that there were many oscillations i
 5. I did some fine tuning of the _Kp_, _Kd_ and _Ki_ to account for the throttle PID controller in arriving at the final values used in the code. The video below shows the performance of the PID controllers around the simulated racetrack.
 
 
-[![PID Controller](https://github.com/calvinhobbes119/PID-Controller/blob/master/Untitled.png)](https://youtu.be/PbgqzFjZbFI)
+[![PID Controller](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Untitled.png)](https://youtu.be/PbgqzFjZbFI)
