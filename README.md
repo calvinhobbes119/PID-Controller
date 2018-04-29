@@ -33,3 +33,7 @@ I manually tuned the  PID parameters for steer value _Kp_, _Kd_ and _Ki_ assumin
 2. Keeping _Kp_ at -0.2, and _Ki_ at 0.0, I modified the _Kd_ parameter until the car stayed on track for the entire course. This results in a plot of CTE as shown below with a value of _Kd_ = -3.0.
 
 ![Vary_Kd_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.2_Kd_-3.0_Ki_0.0.png)
+
+After zooming into the above plot, I noticed that there were many oscillations in the steering value (and the resulting CTE) from one timestep to the next. To reduce these oscillations I smoothed the CTE by averaging it with the CTE from the previous timestep. This resulted in a smoother steer value and CTE from one timestep to the next.
+
+![Using_raw_vs_smoothed_CTE](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Using_raw_vs_smoothed_cte.png)
