@@ -36,4 +36,4 @@ I manually tuned the  PID parameters for steer value _Kp_, _Kd_ and _Ki_ assumin
 
 After zooming into the above plot, I noticed that there were many oscillations in the steering value (and the resulting CTE) from one timestep to the next. To reduce these oscillations I smoothed the CTE by averaging it with the CTE from the previous timestep. This resulted in a smoother steer value and CTE from one timestep to the next.
 
-![Using_raw_vs_smoothed_CTE](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Using_raw_vs_smoothed_cte.png)
+![Using_raw_vs_smoothed_CTE](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Using_raw_vs_smoothed_CTE.png)
