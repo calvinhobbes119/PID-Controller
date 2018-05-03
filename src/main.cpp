@@ -35,7 +35,7 @@ int main()
   PID pid, pid_speed;
   
   // Initialize the pid variable which control steering angle.
-  double init_Kp_steer = -0.3, init_Ki_steer = -0.001, init_Kd_steer = -4.0;
+  double init_Kp_steer = -0.15, init_Ki_steer = -0.001, init_Kd_steer = -2.0;
   pid.Init(init_Kp_steer, init_Ki_steer, init_Kd_steer);
   
   // Initialize the pid variable which control speed.
@@ -58,16 +58,11 @@ int main()
           double speed = std::stod(j[1]["speed"].get<std::string>());
           double angle = std::stod(j[1]["steering_angle"].get<std::string>());
           double steer_value, throttle;
-          double prev_cte = 0.0, smooth_cte = 0.0;
-          /* Smooth out cte to remove sudden updates to steering or speed
-             from PID controllers. */
-          smooth_cte = 0.5 * cte + 0.5 * prev_cte;
-          prev_cte = cte;
           /*
           * Calcuate steering value here, remember the steering value is
           * [-1, 1].
           */
-          pid.UpdateError(smooth_cte);
+          pid.UpdateError(cte);
           steer_value = pid.TotalError();
           if (steer_value > 1.0)
               steer_value = 1.0;
@@ -76,7 +71,7 @@ int main()
           /*
           * Calcuate speed/throttle value here.
           */
-          pid_speed.UpdateError(abs(smooth_cte));
+          pid_speed.UpdateError(abs(cte));
           throttle = pid_speed.TotalError();
           
           // DEBUG
