@@ -21,15 +21,19 @@ __*PID.cpp*__
 2. I updated the UpdateError method to update the proportional, derivative and integral error terms (_p_error_, _d_error_, _i_error_) based on previous CTE and current CTE.
 3. I updated the TotalError method to retun the total error as the scalar product of [_Kp_, _Kd_ and _Ki_] with [_p_error_, _d_error_, _i_error_]. The total error is the output of the PID controller which is used to control steering angle or throttle position.
 
-Tuning
+Reflection
 ---
 I manually tuned the  PID parameters for steer value _Kp_, _Kd_ and _Ki_ assuming a fixed throttle position of 0.3. The procedure I followed for tuning _Kp_, _Kd_ and _Ki_.
 
-1. Assume _Kd_ and _Ki_ are zero. Choose a value of _Kp_ which causes the car to remain on track for a reasonable length of time, say several timesteps. This results in a plot of CTE as shown below with a value of _Kp_ = -0.2. As the plot shows the car stays on the track for several timesteps, but the CTE oscillations increase without dampening until the car veers off track. This indicates that we need to tweak the _Kd_ parameter to reduce the magnitude of the oscillations.
+1. Assume _Kd_ and _Ki_ are zero. Choose a value of _Kp_ which causes the car to remain on track for a reasonable length of time, say several timesteps. This results in a plot of CTE as shown below with a value of _Kp_ = -0.15. As the plot shows the car stays on the track for several timesteps, but the CTE oscillations increase without dampening until the car veers off track. This indicates that we need to tweak the _Kd_ parameter to reduce the magnitude of the oscillations.
 
 ![Vary_Kp_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.2_Kd_0.0_Ki_0.0.png)
 
-3. Keeping _Kp_ at -0.2, and _Ki_ at 0.0, I modified the _Kd_ parameter until the car stayed on track for the entire course. This results in a plot of CTE as shown below with a value of _Kd_ = -3.0.
+The video recording for the same is shown below.
+[![Vary_Kp_alone_video](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Untitled.png)]
+(https://youtu.be/a-Moj3Wwdfw)
+
+3. Keeping _Kp_ at -0.15, and _Ki_ at 0.0, I modified the _Kd_ parameter until the car stayed on track for the entire course. This results in a plot of CTE as shown below with a value of _Kd_ = -2.0.
 
 ![Vary_Kd_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.2_Kd_-3.0_Ki_0.0.png)
 
