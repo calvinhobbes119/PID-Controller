@@ -30,8 +30,7 @@ I manually tuned the  PID parameters for steer value _Kp_, _Kd_ and _Ki_ assumin
 ![Vary_Kp_alone](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Kp_-0.2_Kd_0.0_Ki_0.0.png)
 
 The video recording for the same is shown below.
-[![Vary_Kp_alone_video](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Untitled.png)]
-(https://youtu.be/a-Moj3Wwdfw)
+[![Vary_Kp_alone_video](https://github.com/calvinhobbes119/PID-Controller/blob/master/figures/Untitled.png)](https://youtu.be/a-Moj3Wwdfw)
 
 3. Keeping _Kp_ at -0.15, and _Ki_ at 0.0, I modified the _Kd_ parameter until the car stayed on track for the entire course. This results in a plot of CTE as shown below with a value of _Kd_ = -2.0.
 
